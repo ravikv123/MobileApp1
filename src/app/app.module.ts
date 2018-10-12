@@ -7,14 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
 import { PeopleServiceProvider } from '../providers/people-service/people-service';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -25,13 +28,15 @@ import { PeopleServiceProvider } from '../providers/people-service/people-servic
   entryComponents: [
     MyApp,
     HomePage,
-    AboutPage
+    AboutPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PeopleServiceProvider
+    PeopleServiceProvider,
+    FingerprintAIO
   ]
 })
 export class AppModule {}
