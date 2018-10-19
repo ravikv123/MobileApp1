@@ -11,6 +11,7 @@ import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
 import { PeopleServiceProvider } from '../providers/people-service/people-service';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
+import { GooglePlus } from '../../node_modules/@ionic-native/google-plus';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PeopleServiceProvider,
-    FingerprintAIO
+    FingerprintAIO,
+    GooglePlus
   ]
 })
 export class AppModule {}

@@ -3,6 +3,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 import {HomePage} from '../home/home';
  
+import { GooglePlus } from '@ionic-native/google-plus';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -10,7 +12,9 @@ import {HomePage} from '../home/home';
 })
 export class LoginPage {
  
-  constructor(public navCtrl: NavController, private faio: FingerprintAIO) {
+  constructor(public navCtrl: NavController, 
+    private faio: FingerprintAIO,
+    private googlePlus: GooglePlus) {
   }
 
   login() {
@@ -28,5 +32,15 @@ export class LoginPage {
       .catch((error: any) => {
         console.log('err: ', error);
       });
+  }
+
+
+  googleLogin(){
+    this.googlePlus.trySilentLogin()
+      .then(res => { console.log(res); 
+        this.navCtrl.setRoot(HomePage);
+        console.log("------>>>> login success---->>>>>>");
+      })
+      .catch(err => console.error(err));
   }
 }

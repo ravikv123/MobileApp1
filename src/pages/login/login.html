@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content onload="login()">
+<ion-content>
   <ion-row class="login-row" align-items-center>
     <ion-col col-5></ion-col>
     <ion-col class="lock-col">Login to Continue
@@ -12,5 +12,8 @@
       <img src="assets/imgs/lock.png" class="lock-img" tappable (click)="login()">
    Login to Continue </ion-col>
     <ion-col col-5></ion-col>
+  </ion-row>
+  <ion-row class="login-row" align-items-center>
+    <button ion-button (click)="googleLogin()">GLogin</button>
   </ion-row>
 </ion-content>
