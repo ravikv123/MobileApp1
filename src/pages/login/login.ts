@@ -16,10 +16,15 @@ export class LoginPage {
     private faio: FingerprintAIO,
     private googlePlus: GooglePlus) {
   }
+  
+   
+// Run on Login Page
+ionViewDidLoad() {
+    this.login()
+    }
 
   login() {
-          //this.	navCtrl.setRoot(HomePage);
-
+       //   this.navCtrl.setRoot(HomePage);
     this.faio.show({
       clientId: 'Fingerprint-Demo',
       clientSecret: 'password', // Only Android
